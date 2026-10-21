@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>نمونه تعاملی دینا | شبکه فروش هوشمند</title>
+<style>
+:root{--navy:#101d38;--blue:#2375d4;--red:#d9283a;--gold:#ffc928;--green:#17885b;--bg:#f4f6fa;--ink:#202b3b;--muted:#6b7789;--line:#e1e6ef}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Tahoma,"Noto Sans Arabic",sans-serif;font-weight:650}
+button,input{font:inherit}button{cursor:pointer;border:0}.app{max-width:1440px;margin:auto;min-height:100vh;display:grid;grid-template-columns:250px 1fr;background:#fff;box-shadow:0 8px 35px #1a2d4a12}
+.sidebar{background:var(--navy);color:#fff;padding:24px 16px}.brand{font-size:24px;font-weight:900;margin:4px 12px 5px}.brand span{color:var(--gold)}.tagline{font-size:12px;color:#bdc9dc;margin:0 12px 28px}
+.nav button{display:flex;width:100%;text-align:right;gap:12px;align-items:center;padding:13px 14px;margin:5px 0;border-radius:12px;background:transparent;color:#dce4f2;font-size:14px}.nav button.active,.nav button:hover{background:#263a60;color:white}.nav .ico{font-size:20px;width:26px;text-align:center}.privacy{margin:28px 6px 0;padding:14px;border:1px solid #405274;border-radius:14px;font-size:12px;line-height:1.9;color:#c8d3e5}
+main{padding:28px;min-width:0}.top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}.eyebrow{font-size:12px;color:var(--red);font-weight:900}.top h1{margin:5px 0 0;font-size:25px;font-weight:900}.demo{background:#fff3c9;color:#7b5b00;border-radius:30px;padding:8px 14px;font-size:12px}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:24px 0}.stat,.panel{background:white;border:1px solid var(--line);border-radius:18px;padding:18px}.stat .label{font-size:12px;color:var(--muted)}.stat .value{font-size:27px;font-weight:900;margin:8px 0 2px}.stat .hint{font-size:11px;color:var(--green)}
+.content{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(270px,1fr);gap:16px}.panel h2{font-size:17px;margin:0 0 5px;font-weight:900}.sub{font-size:12px;color:var(--muted);margin:0 0 18px;line-height:1.8}
+.search{width:100%;padding:11px 13px;border:1px solid var(--line);border-radius:11px;outline-color:var(--blue);margin-bottom:12px;background:#fafbfd}
+.store{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;width:100%;text-align:right;background:#fff;border:1px solid var(--line);padding:14px;border-radius:13px;margin:8px 0;color:var(--ink)}.store:hover,.store.selected{border-color:var(--blue);background:#f3f8ff}.store-name{font-size:14px;font-weight:900}.store-meta{font-size:11px;color:var(--muted);margin-top:5px}.pill{font-size:11px;border-radius:20px;padding:6px 9px;white-space:nowrap}.high{background:#ffeaeb;color:#b51d2c}.mid{background:#fff2d1;color:#8a6100}.low{background:#e1f6ec;color:#126b48}
+.risk-head{display:flex;justify-content:space-between;align-items:center;gap:8px}.risk-number{font-size:38px;font-weight:900;color:var(--red);margin:6px 0}.risk-bar{height:9px;background:#edf0f5;border-radius:8px;overflow:hidden;margin:8px 0 16px}.risk-bar span{display:block;height:100%;width:78%;background:var(--red);border-radius:8px}.detail-list{list-style:none;padding:0;margin:14px 0}.detail-list li{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid var(--line);padding:11px 0;font-size:12px}.detail-list span{color:var(--muted)}
+.action-title{font-size:13px;margin:17px 0 9px}.action{display:block;width:100%;text-align:right;padding:12px;border:1px solid var(--line);border-radius:11px;background:#fff;margin:7px 0;font-size:12px}.action:hover{border-color:var(--blue);background:#f3f8ff}.primary{background:var(--red);color:white;border-radius:11px;padding:12px 15px;font-size:13px;font-weight:900}.primary:hover{background:#b92030}.notice{display:none;margin-top:12px;padding:12px;background:#e2f7ed;color:#116341;border-radius:12px;font-size:12px;line-height:1.8}
+.bottom{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}.mini-chart{display:flex;align-items:end;gap:10px;height:105px;padding:10px 8px 0;border-bottom:1px solid var(--line)}.bar{flex:1;background:#8bb7f0;border-radius:7px 7px 0 0;min-height:14px;position:relative}.bar:nth-child(2n){background:#ef8c95}.bar-labels{display:flex;gap:10px;font-size:10px;color:var(--muted);margin-top:7px}.bar-labels span{flex:1;text-align:center}.qr-row{display:flex;gap:12px;align-items:center}.qr-icon{width:74px;height:74px;border:5px solid var(--navy);display:grid;place-items:center;font-size:36px;background:white;border-radius:8px;flex-shrink:0}.qr-row p{font-size:12px;color:var(--muted);line-height:1.8;margin:5px 0}
+@media(max-width:900px){.app{grid-template-columns:1fr}.sidebar{padding:12px}.brand{display:inline-block}.tagline{display:inline-block;margin:0 12px}.nav{display:flex;overflow:auto}.nav button{min-width:max-content;width:auto}.privacy{display:none}main{padding:16px}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.content,.bottom{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+<div class="brand">دینا <span>●</span> هوشمند</div><div class="tagline">نمونه مفهومی · داده‌های آزمایشی</div>
+<nav class="nav">
+<button class="active" data-view="dashboard"><span class="ico">▦</span>نمای کلی</button>
+<button data-view="stores"><span class="ico">▣</span>فروشگاه‌ها</button>
+<button data-view="actions"><span class="ico">✓</span>اقدام‌های پیشنهادی</button>
+<button data-view="voice"><span class="ico">♡</span>صدای مصرف‌کننده</button>
+</nav>
+<div class="privacy">🔒 <b>حریم داده</b><br>این نمونه با اطلاعات ساختگی طراحی شده است. داده واقعی فروشگاه‌ها در این صفحه استفاده نشده است.</div>
+</aside>
+<main>
+<div class="top"><div><div class="eyebrow">شبکه فروش تطبیق‌پذیر</div><h1 id="pageTitle">از هشدار تا اقدام مؤثر</h1></div><span class="demo">● نمونه تعاملی · اطلاعات ساختگی</span></div>
+<section class="stats">
+<div class="stat"><div class="label">فروشگاه‌های پایلوت</div><div class="value">۱۲۸</div><div class="hint">نمونه آزمایشی</div></div>
+<div class="stat"><div class="label">نیازمند بررسی</div><div class="value" id="atRisk">۱۸</div><div class="hint">بر اساس الگوی سفارش</div></div>
+<div class="stat"><div class="label">پیگیری‌های امروز</div><div class="value">۲۴</div><div class="hint">اولویت‌بندی‌شده</div></div>
+<div class="stat"><div class="label">نتیجه اقدامات</div><div class="value">—</div><div class="hint" style="color:#6b7789">پس از اجرای پایلوت سنجیده می‌شود</div></div>
+</section>
+<div class="content">
+<section class="panel" id="storePanel">
+<h2>فروشگاه‌های نیازمند توجه</h2><p class="sub">یک فروشگاه را انتخاب کن تا علت هشدار و اقدام پیشنهادی را ببینی.</p>
+<input id="search" class="search" placeholder="جست‌وجوی نام فروشگاه یا منطقه…" />
+<div id="stores"></div>
+</section>
+<section class="panel" id="detailPanel">
+<div class="risk-head"><div><h2 id="detailName">سوپرمارکت آفتاب</h2><p class="sub" id="detailArea">منطقه نمونه · فروشگاه آزمایشی</p></div><span id="riskPill" class="pill high">ریسک بالا</span></div>
+<div class="label">برآورد نمایشی ریسک کاهش خرید</div><div class="risk-number" id="riskNum">۷۸٪</div><div class="risk-bar"><span id="riskFill"></span></div>
+<ul class="detail-list" id="detailList">
+<li><span>فاصله معمول سفارش</span><b>۷ روز</b></li><li><span>فاصله فعلی سفارش</span><b>۱۴ روز</b></li><li><span>تغییر حجم سفارش</span><b>۳۰٪ کاهش</b></li><li><span>علت قطعی</span><b>هنوز مشخص نیست</b></li>
+</ul>
+<div class="action-title">اقدام پیشنهادی برای بررسی</div>
+<button class="action" data-action="تماس با فروشگاه برای فهمیدن علت افت سفارش">☎ تماس و پرسش از علت افت سفارش</button>
+<button class="action" data-action="بررسی موجودی و امکان تأمین محصول">▤ بررسی موجودی و تأمین</button>
+<button class="action" data-action="برنامه‌ریزی ویزیت حضوری در صورت نیاز">⌖ برنامه‌ریزی ویزیت در صورت نیاز</button>
+<button class="primary" id="logAction">ثبت اقدام انتخاب‌شده</button>
+<div id="notice" class="notice"></div>
+</section>
+</div>
+<div class="bottom">
+<section class="panel"><h2>الگوی سفارش اخیر</h2><p class="sub">نمایش ساختگی برای توضیح مفهوم؛ نه داده واقعی دینا.</p><div class="mini-chart"><div class="bar" style="height:80%"></div><div class="bar" style="height:88%"></div><div class="bar" style="height:69%"></div><div class="bar" style="height:62%"></div><div class="bar" style="height:43%"></div><div class="bar" style="height:28%"></div></div><div class="bar-labels"><span>هفته ۱</span><span>هفته ۲</span><span>هفته ۳</span><span>هفته ۴</span><span>هفته ۵</span><span>هفته ۶</span></div></section>
+<section class="panel"><h2>صدای مصرف‌کننده</h2><p class="sub">QR Code برای کشف ترجیحات و آزمایش فرضیه‌های محصول</p><div class="qr-row"><div class="qr-icon">▦</div><div><b>نظر تو، طعم فردا را می‌سازد!</b><p>سه سؤال کوتاه درباره طعم، بسته‌بندی و ویژگی‌های موردنظر. اول از مشتری یاد می‌گیریم؛ بعد سرمایه‌گذاری می‌کنیم.</p><button class="primary" id="qrLearn">دیدن مسیر بازخورد</button></div></div><div id="qrNotice" class="notice"></div></section>
+</div>
+</main></div>
+<script>
+const data=[
+{name:"سوپرمارکت آفتاب",area:"منطقه نمونه ۱",risk:78,usual:7,current:14,change:30,level:"بالا",pill:"high",note:"فاصله سفارش دو برابر شده و حجم سفارش کاهش یافته؛ علت باید بررسی شود."},
+{name:"فروشگاه بهار",area:"منطقه نمونه ۲",risk:56,usual:10,current:15,change:18,level:"متوسط",pill:"mid",note:"تغییر قابل بررسی است؛ با روند تاریخی فروشگاه مقایسه شود."},
+{name:"هایپرمارکت سپهر",area:"منطقه نمونه ۳",risk:24,usual:5,current:6,change:4,level:"پایین",pill:"low",note:"فعلاً تغییر چشمگیری دیده نمی‌شود؛ پایش عادی کافی است."},
+{name:"فروشگاه باران",area:"منطقه نمونه ۱",risk:67,usual:8,current:13,change:22,level:"متوسط رو به بالا",pill:"mid",note:"فاصله سفارش افزایش یافته؛ وضعیت موجودی و تماس‌های قبلی بررسی شود."}
+];
+let selected=data[0], actionChosen="";
+const fa=n=>String(n).replace(/\d/g,d=>"۰۱۲۳۴۵۶۷۸۹"[d]);
+function renderStores(filter=""){const el=document.getElementById("stores");el.innerHTML="";data.filter(d=>(d.name+d.area).includes(filter)).forEach(d=>{const b=document.createElement("button");b.className="store"+(d===selected?" selected":"");b.innerHTML=`<div><div class="store-name">${d.name}</div><div class="store-meta">${d.area} · سفارش اخیر: ${fa(d.current)} روز</div></div><span class="pill ${d.pill}">${d.level}</span>`;b.onclick=()=>{selected=d;renderStores(document.getElementById("search").value);renderDetail()};el.appendChild(b)})}
+function renderDetail(){document.getElementById("detailName").textContent=selected.name;document.getElementById("detailArea").textContent=selected.area+" · داده ساختگی";document.getElementById("riskPill").textContent="ریسک "+selected.level;document.getElementById("riskPill").className="pill "+selected.pill;document.getElementById("riskNum").textContent=fa(selected.risk)+"٪";document.getElementById("riskFill").style.width=selected.risk+"%";document.getElementById("riskFill").style.background=selected.risk>65?"#d9283a":selected.risk>40?"#d79a12":"#17885b";document.getElementById("detailList").innerHTML=`<li><span>فاصله معمول سفارش</span><b>${fa(selected.usual)} روز</b></li><li><span>فاصله فعلی سفارش</span><b>${fa(selected.current)} روز</b></li><li><span>تغییر حجم سفارش</span><b>${fa(selected.change)}٪ کاهش</b></li><li><span>نکته قابل بررسی</span><b>${selected.note}</b></li>`;document.getElementById("notice").style.display="none";actionChosen=""}
+document.querySelectorAll(".nav button").forEach(b=>b.onclick=()=>{document.querySelectorAll(".nav button").forEach(x=>x.classList.remove("active"));b.classList.add("active");const view=b.dataset.view;const titles={dashboard:"از هشدار تا اقدام مؤثر",stores:"فروشگاه‌ها و الگوی سفارش",actions:"اقدام‌های پیشنهادی برای تیم فروش",voice:"شنیدن صدای مصرف‌کننده"};document.getElementById("pageTitle").textContent=titles[view];if(view==="voice"){document.getElementById("qrNotice").style.display="block";document.getElementById("qrNotice").textContent="مسیر بازخورد: اسکن QR ← سه سؤال کوتاه ← تحلیل گروهی ← آزمایش محدود محصول."}else if(view==="actions"){document.getElementById("notice").style.display="block";document.getElementById("notice").textContent="برای هر فروشگاه اقدام را انتخاب و ثبت کن. در محصول واقعی، نتیجه پیگیری باید بعداً ثبت شود تا اثر اقدام سنجیده شود."}});
+document.getElementById("search").addEventListener("input",e=>renderStores(e.target.value.trim()));
+document.querySelectorAll(".action").forEach(b=>b.onclick=()=>{actionChosen=b.dataset.action;document.querySelectorAll(".action").forEach(x=>x.style.borderColor="#e1e6ef");b.style.borderColor="#2375d4";b.style.background="#f3f8ff"});
+document.getElementById("logAction").onclick=()=>{const n=document.getElementById("notice");n.style.display="block";n.textContent=actionChosen?("اقدام آزمایشی ثبت شد: "+actionChosen+" — برای "+selected.name+". در نسخه واقعی، این ثبت باید به سیستم پیگیری متصل شود."):"ابتدا یکی از اقدام‌های پیشنهادی را انتخاب کن."};
+document.getElementById("qrLearn").onclick=()=>{const n=document.getElementById("qrNotice");n.style.display="block";n.textContent="۱) اسکن QR روی محصول  ۲) پاسخ به سه سؤال کوتاه  ۳) تحلیل ترجیحات  ۴) آزمایش محدود پیش از سرمایه‌گذاری بزرگ."};
+renderStores();renderDetail();
+</script>
+</body></html>
